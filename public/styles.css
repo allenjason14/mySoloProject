@@ -1,0 +1,52 @@
+html {
+  background-color:#f3f5f6;
+  width: 100%;
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+.header {
+  background-color: red;
+  border:3px solid black;
+}
+
+.wrapper {
+  min-height:100%;
+  position:relative;
+  margin-bottom: -2em;
+}
+
+.wrapper:after {
+  content: "";
+  display: block;
+  height: 4em;
+}
+
+.footer {
+  height: 4em;
+  background-color: green;
+  border: 5px solid gray;
+  width:100%
+}
+
+.info-box {
+  width: 85%;
+  min-height: 5px;
+  margin:1em auto;
+  display:block;
+}
+
+.view-change {
+  background:none!important;
+  border:none;
+  padding:0!important;
+  color:black;
+  cursor:pointer;
+}

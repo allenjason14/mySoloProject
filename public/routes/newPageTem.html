@@ -1,0 +1,20 @@
+<h1>Create a Page</h1>
+<input ng-model="infoName"></input>
+
+<h2>{{historyname}}</h2>
+<input ng-model="historyname" placeholder="History" value="supercalagra  . . . "></input>
+<textarea class="info-box" cols=20 rows=20 ng-model="history"></textarea>
+
+<h2>{{skillsname}}</h2>
+<input ng-model="skillsname" placeholder="Skills"> </input>
+<textarea class="info-box" cols=20 rows=20 ng-model="skills"></textarea>
+
+<h2>{{notesname}}</h2>
+<input ng-model="notesname" placeholder="Notes"> </input>
+<textarea class="info-box" cols=20 rows=20 ng-model="notes"></textarea>
+
+<h2>{{developmentname}}</h2>
+<input ng-model="developmentname" placeholder="Development"> </input>
+<textarea class="info-box" cols=20 rows=20 ng-model="development"></textarea>
+
+<button ng-click="saveData(infoName, historyname, history, skillsname, skills, notesname, notes, developmenname, development)">So True</button>

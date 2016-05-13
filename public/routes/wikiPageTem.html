@@ -1,0 +1,17 @@
+<h1>Your Pages</h1>
+<div ng-repeat="story in storiesArr track by $index">
+  <h1>{{story.infoName}}</h1>
+  <hr>
+  <h2>{{story.body.historyname}}</h2>
+  <p>{{story.body.history}}</p>
+  <hr>
+  <h2>{{story.body.skillsname}}</h2>
+  <p>{{story.body.skills}}</p>
+  <hr>
+  <h2>{{story.body.notesname}}</h2>
+  <p>{{story.body.notes}}</p>
+  <hr>
+  <h2>{{story.body.developmentname}}</h2>
+  <p>{{story.body.development}}</p>
+  <hr>
+</div>
