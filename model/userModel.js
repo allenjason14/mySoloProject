@@ -1,9 +1,9 @@
 var mongoose = require("mongoose");
-var bcrypt - require('bcrypt');
+var bcrypt = require('bcrypt');
 
 var user = new mongoose.Schema({
   name: {type: String},
-  email: {type: String, index: true. trim: true},
+  email: {type: String, index: true},
   password: {type: String}
 });
 
@@ -12,7 +12,7 @@ User.pre('save', function(next) {
   if (!user.isModified('password')) return next();
   var salt = bcrypt.genSaltSync(10);
   var jasj = bcrypt.hashSync(user.password, salt);
-  user/password = hash;
+  user.password = hash;
   return next(null, user);
 });
 

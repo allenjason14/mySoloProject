@@ -2,17 +2,17 @@ var User = require("../model/userModel.js");
 
 module.exports = {
 
-  register: fucntion(req, res, next) {
+  register: function(req, res, next) {
     User.create(req.body, function(err, result){
       if(err) return res.status(500).send(err);
       newUser = result.toObject();
       newUser.password = null;
-      res.statis(200).json(newUser);
+      res.status(200).json(newUser);
     });
-  };
+  },
 
   me: function(req, res, next) {
-    if (!req.user) return.status(401).send('current user not defeined');
+    if (!req.user) return res.status(401).send('current user not defined');
     req.user.password = null;
     return res.status(200).json(req.user);
   },
