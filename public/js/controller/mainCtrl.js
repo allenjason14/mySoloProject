@@ -2,7 +2,15 @@ angular.module('wattReads').controller('mainCtrl', function($scope, $state){
 
   $scope.storiesArr = [];
   $scope.blankArr = [];
+  $scope.tabs = [];
 
+  $scope.addTab=function(){
+    $scope.tabs.push({
+      title:"",
+      body:""
+    });
+  };
+  
   $scope.selectName = function(num) {
     $scope.storiesArr = [];
     $state.go('wikipage');

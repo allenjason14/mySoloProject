@@ -44,7 +44,7 @@ app.get('/logout', function(req, res, next){
 var mongoURI = config.MONGO_URI;
 var port = config.PORT;
 
-mongoose.connect('mongoURI');
+mongoose.connect(mongoURI);
 mongoose.connection.once('open', function(){
     console.log('Connected to Mongo DB at ' + mongoURI);
 });
