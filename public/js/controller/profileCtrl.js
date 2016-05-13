@@ -2,7 +2,10 @@ angular.module("wattReads").controller('profileCtrl', function($scope, user, mai
   $scope.user = user;
 
   $scope.logout = function () {
+    console.log("Ctrl logout working");
     mainService.logout().then(function(response){
+      $state.go('login');
+      console.log(response);
     });
   };
 });

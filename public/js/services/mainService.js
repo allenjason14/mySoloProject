@@ -30,6 +30,7 @@ angular.module('wattReads').service("mainService", function($http) {
   };
 
   this.logout = function() {
+    console.log("Here's my logout");
     return $http({
       method: 'GET',
       url: '/logout',

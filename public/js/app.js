@@ -1,7 +1,7 @@
 angular.module('wattReads', ['ui.router'])
   .config(function($urlRouterProvider, $stateProvider){
 
-      $urlRouterProvider.otherwise('/');
+      $urlRouterProvider.otherwise('/login');
 
       $stateProvider
         .state("home", {

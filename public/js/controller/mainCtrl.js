@@ -1,4 +1,4 @@
-angular.module('wattReads').controller('mainCtrl', function($scope, $state){
+ angular.module('wattReads').controller('mainCtrl', function($scope, $state, mainService){
 
   $scope.chooseArr = [];
   $scope.saveArr = [];
