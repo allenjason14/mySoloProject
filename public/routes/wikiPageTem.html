@@ -1,8 +1,12 @@
 <h1>Your Pages</h1>
-<div ng-repeat="story in storiesArr track by $index">
-  <h1>{{story.infoName}}</h1>
+<div ng-repeat="story in chooseArr track by $index">
+  <h1>{{story.name}}</h1>
   <hr>
-  <h2>{{story.body.historyname}}</h2>
+  <div ng-repeat="prop in story ">
+    <p>{{prop.title}}</p>
+    <p>{{prop.text}}</p>
+  </div>
+  <!-- <h2>{{story.body.historyname}}</h2>
   <p>{{story.body.history}}</p>
   <hr>
   <h2>{{story.body.skillsname}}</h2>
@@ -13,5 +17,5 @@
   <hr>
   <h2>{{story.body.developmentname}}</h2>
   <p>{{story.body.development}}</p>
-  <hr>
+  <hr> -->
 </div>

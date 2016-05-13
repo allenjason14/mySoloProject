@@ -1,15 +1,16 @@
 angular.module('wattReads').service("mainService", function($http) {
   this.login = function(user) {
+    console.log(user);
     return $http({
       method: 'POST',
       url: '/login',
       data: user
     }).then(function(response) {
-      return response
+      return response;
     });
   };
 
-  this.gesture = function() {
+  this.getUser = function() {
     return $http({
       method: "GET",
       url: '/me'

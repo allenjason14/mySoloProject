@@ -11,7 +11,7 @@ User.pre('save', function(next) {
   var user = this;
   if (!user.isModified('password')) return next();
   var salt = bcrypt.genSaltSync(10);
-  var jasj = bcrypt.hashSync(user.password, salt);
+  var hash = bcrypt.hashSync(user.password, salt);
   user.password = hash;
   return next(null, user);
 });

@@ -1,7 +1,7 @@
 angular.module('wattReads').controller('mainCtrl', function($scope, $state){
 
-  $scope.storiesArr = [];
-  $scope.blankArr = [];
+  $scope.chooseArr = [];
+  $scope.saveArr = [];
   $scope.tabs = [];
 
   $scope.addTab=function(){
@@ -10,30 +10,31 @@ angular.module('wattReads').controller('mainCtrl', function($scope, $state){
       body:""
     });
   };
-  
+
+  $scope.clearTab=function(){
+    $scope.tabs = [];
+    };
+
   $scope.selectName = function(num) {
-    $scope.storiesArr = [];
+    $scope.chooseArr = [];
     $state.go('wikipage');
-    $scope.storiesArr.push($scope.blankArr[num]);
+    $scope.chooseArr.push($scope.saveArr[num]);
+    console.log($scope.saveArr[num]);
+    console.log($scope.chooseArr[0].body);
   }
 
 
-  $scope.saveData = function(infoName, historyname, history, skillsname, skills, notesname, notes, developmentname, development){
+  $scope.saveData = function(infoName, title, text){
     var named = {
       name: infoName,
       body: {
-        historyname:historyname,
-        history:history,
-        skillsname:skillsname,
-        skills:skills,
-        notesname:notesname,
-        notes:notes,
-        developmentname:developmentname,
-        development:development,
+        title: title,
+        text: text
       }
     }
-  $scope.blankArr.push(named);
-}
+      console.log(named);
+      $scope.saveArr.push(named);
+  }
   //
   //   $scope.blankArr.push(named);
   //   $scope.infoName = '';
@@ -42,6 +43,4 @@ angular.module('wattReads').controller('mainCtrl', function($scope, $state){
   //   $scope.hey = '';
   //   $scope.whassup = '';
   //   $scope.peace = '';
-
-
 });

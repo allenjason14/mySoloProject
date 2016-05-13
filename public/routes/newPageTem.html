@@ -1,11 +1,13 @@
 <h1>Create a Page</h1>
 <input ng-model="infoName"></input>
 
-<div ng-repeat="tab in tabs track by index">
-  <input ng-model="tabs.title" placeholder="History"></input>
-  <textarea class="tabs.body" cols=20 rows=20 ng-model="history"></textarea>
-</div>
-<button ng-click="addTab()"></button>
+<div ng-repeat="tab in tabs track by $index">
+  <input ng-model="tabs.title[$index]" placeholder="History"></input>
+  <textarea class="info-box" cols=20 rows=20 ng-model="tabs.body[$index]"></textarea>
+  <button ng-click="saveData(infoName, tabs.title[$index], tabs.body[$index])">Save</button>
+</div> <br>
+<button ng-click="addTab()">New Tab</button> <br>
+<button ng-click="clearTab()">Clear</button> <br>
 
 <!--<h2>{{historyname}}</h2>
 <input ng-model="historyname" placeholder="History" value="supercalagra  . . . "></input>
@@ -21,6 +23,6 @@
 
 <h2>{{developmentname}}</h2>
 <input ng-model="developmentname" placeholder="Development"> </input>
-<textarea class="info-box" cols=20 rows=20 ng-model="development"></textarea>
+<textarea class="info-box" cols=20 rows=20 ng-model="development"></textarea>-->
 
-<button ng-click="saveData(infoName, historyname, history, skillsname, skills, notesname, notes, developmenname, development)">So True</button> -->
+<!-- <button ng-click="saveData(infoName, historyname, history, skillsname, skills, notesname, notes, developmenname, development)">So True</button> -->

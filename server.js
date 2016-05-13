@@ -10,6 +10,7 @@ var config = require('./config');
 var passport = require('./services/passport');
 
 var isAuthed = function(req, res, next) {
+  console.log("auth working");
   if (!req.isAuthenticated()) return res.status(401).send();
   return next();
 };
@@ -26,11 +27,11 @@ app.use(session({
 }));
 
 app.use(passport.initialize());
-  app.use(passport.session());
+app.use(passport.session());
 
 //user information
 app.post('/users', userCtrl.register);
-app.put('/me, isAuthed', userCtrl.me);
+app.get('/me', isAuthed, userCtrl.me);
 app.delete('/user/:_id', isAuthed, userCtrl.update);
 app.post('/login', passport.authenticate('local', {
   successRedirect: '/me'
