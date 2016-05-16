@@ -4,6 +4,7 @@ var session = require('express-session');
 var mongoose = require('mongoose');
 
 var userCtrl = require('./controllers/userCtrl.js');
+var storyCtrl = require('./controllers/storyCtrl.js');
 
 var config = require('./config');
 
@@ -38,7 +39,9 @@ app.post('/login', passport.authenticate('local', {
 }));
 
 //story information
-app.post('/newStory')
+app.post('/newStory', storyCtrl.Create);
+app.get('/readStory', storyCtrl.Read);
+
 
 app.get('/logout', function(req, res, next){
   req.logout();

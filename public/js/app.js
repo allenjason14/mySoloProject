@@ -12,21 +12,27 @@ angular.module('wattReads', ['ui.router'])
         .state("newpage", {
           url: "/new",
           templateUrl: "routes/newPageTem.html",
-          controller: "newPageCtrl"
-        })
+          controller: "newPageCtrl",
+          resolve: {
+            user: function(mainService) {
+              return mainService.getUser();
+            }
+        }
+      })
           .state("login", {
             url: "/login",
             templateUrl: "routes/loginTem.html",
             controller: "loginCtrl"
           })
+
           .state("wikipage", {
             url: "/wikipage",
             templateUrl: "routes/wikiPageTem.html",
-            // resolve: {
-            //   user: function(mainService) {
-            //     return mainService.getUser();
-            //   }
-            // },
+            resolve: {
+              user: function(mainService) {
+                return mainService.getUser();
+              }
+            },
             controller: "wikiPageCtrl"
           })
           .state("profile", {
