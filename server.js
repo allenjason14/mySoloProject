@@ -37,6 +37,9 @@ app.post('/login', passport.authenticate('local', {
   successRedirect: '/me'
 }));
 
+//story information
+app.post('/newStory')
+
 app.get('/logout', function(req, res, next){
   req.logout();
   return res.status(200).send('Logged out');

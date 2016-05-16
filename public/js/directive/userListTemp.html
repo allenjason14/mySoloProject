@@ -1,6 +1,8 @@
-<div ng-repeat="saved in saveArr track by $index">
-
-  <button class="view-change" ng-click="selectName($index)">{{saved.name}}</button>
-  <hr>
-
+<div class="menu-wrapper">
+  <h2>Your Pages</h2>
+    <div class="side-bar" ng-repeat="saved in saveArr track by $index">
+      <hr>
+      <button class="view-change" ng-click="selectName($index)">{{saved.name}}</button>
+    </div>
+    <div class="blank-box"></div>
 </div>

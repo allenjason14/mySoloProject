@@ -11,19 +11,15 @@
 
   <body ng-controller="mainCtrl">
     <div class="wrapper">
-      <header-dir></header-dir>
-      <user-list></user-list>
+    <header-dir></header-dir>
+    <user-list></user-list>
+
+    <div class="right-column-wrapper">
       {{user}}
-      
-      <span><a ui-sref='home'>Home</a></span>
-      <span><a ui-sref='newpage'>New Page</a></span>
-      <span><a ui-sref='login'>Log In</a></span>
-      <span><a ui-sref='wikipage'>Your Pages</a></span>
-      <span><a ui-sref='profile'>Profile</a></span>
 
       <ui-view></ui-view>
 
-
+    </div> <!--right column closer-->
   </div> <!--closing the wrapper div-->
     <footer-dir></footer-dir>
 
@@ -38,6 +34,8 @@
     <script src="js/directive/userList.js"></script>
     <script src="js/controller/loginCtrl.js"></script>
     <script src="js/controller/profileCtrl.js"></script>
+    <script src="js/controller/wikiPageCtrl.js"></script>
+    <script src="js/controller/newPageCtrl.js"></script>
     <script src="js/services/mainService.js"></script>
 
 

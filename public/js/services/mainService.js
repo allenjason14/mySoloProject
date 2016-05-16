@@ -1,4 +1,5 @@
 angular.module('wattReads').service("mainService", function($http) {
+
   this.login = function(user) {
     console.log(user);
     return $http({
@@ -15,6 +16,7 @@ angular.module('wattReads').service("mainService", function($http) {
       method: "GET",
       url: '/me'
     }).then(function(response) {
+      console.log(response);
       return response;
     });
   };

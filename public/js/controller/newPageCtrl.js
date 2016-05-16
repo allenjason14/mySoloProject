@@ -1,4 +1,4 @@
- angular.module('wattReads').controller('mainCtrl', function($scope, $state, mainService){
+angular.module("wattReads").controller("newPageCtrl", function($scope, mainService){
 
   $scope.chooseArr = [];
   $scope.saveArr = [];
@@ -35,12 +35,5 @@
       console.log(named);
       $scope.saveArr.push(named);
   }
-  //
-  //   $scope.blankArr.push(named);
-  //   $scope.infoName = '';
-  //   $scope.hello = '';
-  //   $scope.yo = '';
-  //   $scope.hey = '';
-  //   $scope.whassup = '';
-  //   $scope.peace = '';
+
 });

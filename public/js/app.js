@@ -4,15 +4,15 @@ angular.module('wattReads', ['ui.router'])
       $urlRouterProvider.otherwise('/login');
 
       $stateProvider
-        .state("home", {
-          url: '/',
-          templateUrl: "routes/homeTem.html",
-          // controller: "homeCtrl"
-        })
+      //   .state("home", {
+      //     url: '/',
+      //     templateUrl: "routes/homeTem.html",
+      //     controller: "homeCtrl"
+      //   })
         .state("newpage", {
           url: "/new",
           templateUrl: "routes/newPageTem.html",
-          // controller: "choicePageCtrl"
+          controller: "newPageCtrl"
         })
           .state("login", {
             url: "/login",
@@ -22,7 +22,12 @@ angular.module('wattReads', ['ui.router'])
           .state("wikipage", {
             url: "/wikipage",
             templateUrl: "routes/wikiPageTem.html",
-            // controller: "mainCtrl"
+            // resolve: {
+            //   user: function(mainService) {
+            //     return mainService.getUser();
+            //   }
+            // },
+            controller: "wikiPageCtrl"
           })
           .state("profile", {
           templateUrl: "routes/profileTem.html",
