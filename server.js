@@ -41,7 +41,7 @@ app.post('/login', passport.authenticate('local', {
 //story information
 app.post('/newStory', storyCtrl.Create);
 app.get('/readStory', storyCtrl.Read);
-
+app.put('/updateStory', storyCtrl.SaveSections);
 
 app.get('/logout', function(req, res, next){
   req.logout();

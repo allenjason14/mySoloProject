@@ -1,4 +1,4 @@
-angular.module("wattReads").controller("newPageCtrl", function($scope, storyService, user){
+angular.module("wattReads").controller("newPageCtrl", function($scope, storyService, user, $state){
 
   $scope.user = user.data;
 
@@ -33,6 +33,13 @@ angular.module("wattReads").controller("newPageCtrl", function($scope, storyServ
     })
   }
 
+$scope.saveSections = function(story){
+  console.log("This is my attempt to update " + story);
+  storyService.saveSections(story).then(function(response){
+    $scope.saveArr.push(response);
+    console.log(response + " from saveSections function");
+  })
+}
   // $scope.saveData = function(infoName, title, text){
   //   var named = {
   //     name: infoName,

@@ -12,10 +12,6 @@ body {
   height:100%;
 }
 
-html, body, .wrapper {
-height: 100%;
-overflow: auto;
-}
 /*header formatting*/
 
 .header {
@@ -52,11 +48,19 @@ overflow: auto;
   margin-bottom: -1.5em;
 }
 
+/*.clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+}*/
+
 .wrapper:after {
   content: "";
   display: block;
-  height: 1.5em;
-  background: orange;
+  height: 2em;
 }
 
 .footer {
@@ -69,7 +73,6 @@ overflow: auto;
 .right-column-wrapper {
     width:85%;
     height:5em;
-    float:right;
     margin:0;
     padding:0;
     min-height: 5em;
@@ -79,15 +82,15 @@ overflow: auto;
 
 /* Side Menu Directive*/
 .menu-wrapper {
-  width:13%;
-  float: left;
+  width:14%;
   margin:0;
   padding:0;
   background: #e5e5e5;
-  border-right: 1px solid black;
+  border: 1px solid black;
   border-bottom: 1px solid black;
-  text-align:center;
+  text-align: center;
   display:inline-block;
+  vertical-align: top;
 }
 
 .view-change {
@@ -96,6 +99,9 @@ overflow: auto;
   padding:0!important;
   color:black;
   cursor:pointer;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .info-box {
