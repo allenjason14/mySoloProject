@@ -6,6 +6,17 @@ angular.module("wattReads").controller("newPageCtrl", function($scope, storyServ
   $scope.saveArr = [];
   $scope.tabs = [];
 
+  $scope.storyData = {
+    user: $scope.user._id,
+    body:{}
+}
+
+$scope.readStory = function(){
+  mainService.getUser($scope.user._id).then(function(response){
+    $scope.user = response;
+  })
+}
+
   $scope.addTab = function(){
     $scope.tabs.push({
       title:"",
@@ -25,31 +36,20 @@ angular.module("wattReads").controller("newPageCtrl", function($scope, storyServ
     console.log($scope.chooseArr[0].body);
   }
 
-  $scope.addStory = function(story){
-    console.log("hello, this is your story: " + story);
-    storyService.addStory(story).then(function(response){
-        $scope.saveArr.push(response);
-        console.log(response);
+  $scope.addStory = function(){
+    console.log("this is what I'm sending from addStory " + $scope.storyData);
+    storyService.addStory($scope.storyData).then(function(response){
+      $scope.saveArr.push(response);
+      console.log("this is the response I'm getting: " + response);
     })
   }
 
-$scope.saveSections = function(story){
-  console.log("This is my attempt to update " + story);
-  storyService.saveSections(story).then(function(response){
-    $scope.saveArr.push(response);
-    console.log(response + " from saveSections function");
-  })
-}
-  // $scope.saveData = function(infoName, title, text){
-  //   var named = {
-  //     name: infoName,
-  //     body: {
-  //       title: title,
-  //       text: text
-  //     }
-  //   }
-  //     console.log(named);
-  //     $scope.saveArr.push(named);
-  // }
+  $scope.saveSections = function(story){
+    console.log("This is my attempt to update " + story);
+    storyService.saveSections(story).then(function(response){
+      $scope.saveArr.push(response);
+      console.log(response + " from saveSections function");
+    })
+  }
 
 });

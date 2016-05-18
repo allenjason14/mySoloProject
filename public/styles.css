@@ -31,7 +31,7 @@ body {
   padding-left: .5em;
   font-family: sans-serif;
   font-weight: bolder;
-  font-size: 1.5em;
+  font-size: 2.2em;
   display:inline-block
 }
 
@@ -47,15 +47,6 @@ body {
   min-height:100%;
   margin-bottom: -1.5em;
 }
-
-/*.clearfix:after {
-    clear: both;
-    content: ".";
-    display: block;
-    height: 0;
-    line-height: 0;
-    visibility: hidden;
-}*/
 
 .wrapper:after {
   content: "";

@@ -1,21 +1,32 @@
 var Story = require('../model/storyModel.js');
+var User = require('../model/userModel.js')
 
 module.exports = {
 
-  Create: function(req, res, next) {
-    var newStory = new Story(req.body);
-    newStory.save(function(err, response){
-      if (err) {
-        res.status(500).json(err);
-      }
-      else {
-        res.status(200).json(response)
-      }
-    })
-  },
+
+  Create: function (req, res, next) {
+  		Story.create(req.body, function (err, response) {
+  			if (err) {
+  				res.status(500).send(err)
+  			} else {
+  				User.findByIdAndUpdate(req.body.user, {
+  					$push: {
+  						'story': response
+  					}
+  				}, function (err, user) {
+  					console.log(user);
+  					if (err) {
+  						res.status(500).send(err)
+  					} else {
+  						res.status(200).send(user)
+  					}
+  				})
+  			}
+  		})
+  	},
 
   Read: function(req, res, next) {
-    Story.find().exec(function(err, response) {
+    Story.findOne({_id: req.params.id}).populate("user").exec(function(err, response) {
       if(err){
         res.status(500).json(err);
       }
@@ -25,8 +36,46 @@ module.exports = {
     })
   },
 
+  CheckStory: function(req, res, next) {
+    Story.find({}).exec(function(err, response) {
+      if(err){
+        res.status(500).json(err);
+      }
+      else{
+        res.status(200).json(response);
+      }
+    })
+  },
+
+  // Create: function (req, res, next) {
+  // 		Story.create(req.body, function (err, response) {
+  // 			if (err) {
+  // 				res.status(500).send(err)
+  // 			} else {
+  // 				User.findByIdAndUpdate(req.body.user, {
+  // 					$push: {
+  // 						'story': response
+  // 					}
+  // 				}, function (err, user) {
+  // 					console.log(user);
+  // 					if (err) {
+  // 						res.status(500).send(err)
+  // 					} else {
+  // 						res.status(200).send(user)
+  // 					}
+  // 				})
+  // 			}
+  // 		})
+  // 	},
+
   SaveSections: function(req, res, next) {
-      Story.findByIdAndUpdate(req.params.id, req.body, function(err, response){
+      Story.findByIdAndUpdate(req.params.id,
+        {
+        $push: {
+          'body': req.body
+        }
+      },
+       function(err, response){
             if(err){
                 res.status(500).json(err);
             }else{

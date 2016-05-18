@@ -11,6 +11,9 @@ angular.module('wattReads').controller('userListCtrl', function(storyService, ma
   $scope.getUser();
 
   $scope.readStory = function(){
-    storyService.readStory();
+    storyService.readStory().then(function(response){
+      console.log("Read story from directive");
+      $scope.story = response;
+    })
   }
 });

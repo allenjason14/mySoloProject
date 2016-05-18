@@ -1,4 +1,5 @@
 var User = require("../model/userModel.js");
+var Story = require("../model/storyModel.js");
 
 module.exports = {
 
@@ -23,5 +24,27 @@ module.exports = {
       if (err) next(err);
       res.status(200).send('user updated');
     });
-  }
+  },
+
+  getUsers: function(req, res, next) {
+    User.find({}).exec(function(err, response) {
+      if(err){
+        res.status(500).json(err);
+      }
+      else{
+        res.status(200).json(response);
+      }
+    })
+  },
+
+  Read: function(req, res, next) {
+    User.findOne({_id: req.params.id}).populate("story").exec(function(err, response) {
+      if(err){
+        res.status(500).json(err);
+      }
+      else{
+        res.status(200).json(response);
+      }
+    })
+  },
 }

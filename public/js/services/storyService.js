@@ -1,21 +1,31 @@
 angular.module("wattReads").service("storyService", function($http){
 
-  this.addStory = function(story){
+  this.addStory = function(storyData){
     return $http({
       method:'POST',
       url: "/newStory",
-      data: {name: story}
+      data: storyData
     }).then(function(response){
       console.log(response.data);
       return response.data
     })
   }
 
+  this.readStory = function(){
+      return $http({
+        method:"PUT",
+        url: "/readStory" + story._id,
+      }).then(function(response){
+        return response.data
+      })
+  }
+
   this.saveSections = function(){
     return $http({
       method: "PUT",
       url: "/updateStory" + story._id,
-      data: {
+      data: storyData,
+      body:{
         title: story.title,
         text: story.text
       }
@@ -45,5 +55,6 @@ angular.module("wattReads").service("storyService", function($http){
       return response.data
     })
   }
+
 
 });
