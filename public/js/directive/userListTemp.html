@@ -1,9 +1,8 @@
 <span class="menu-wrapper">
   <h2>{{user.data.name}}'s Pages</h2>
-  {{user.data.choice}} -- users choice
       <div class="side-bar" ng-repeat="prop in story.story track by $index">
       <hr>
-      <button class="view-change" ui-sref="wikipage({id: prop._id})">{{prop.name}}{{$index}}</button>
+      <button class="view-change" ui-sref="wikipage({id: prop._id})">{{prop.name}}</button>
     </div>
 
   </span>

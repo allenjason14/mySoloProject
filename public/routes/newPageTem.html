@@ -3,22 +3,27 @@
 <h1>Create a Page</h1>
 Hello, {{user.data.name}} <br><br><br>
 
-{{user}}<br><br><br>
+<!-- {{user}}<br><br><br>
 {{saveArr}}<br><br><br>
 
-{{storyData}}<br><br><br>
+{{storyData}}<br><br><br> -->
 
-<button ng-click="addStory()">Save</button>
+This is my response {{storyId}}
+
+<button ng-click="addStory(storyData)">Save</button>
 
 <input ng-model="storyData.name"></input>
 
-<div ng-repeat="tab in tabs track by $index">
-  <input ng-model="storyData.body.title" placeholder="Please Enter a Name"></input>
-  <textarea class="info-box" cols=20 rows=20 ng-model="storyData.body.text"></textarea>
-  <button ng-click="addStory()">Save</button>
+<div ng-repeat="tab in tabs track by $index" ng-show="toggleTab">
+  <!-- <button ng-click="addStory()">Save</button> -->
 </div> <br>
-<button ng-click="addTab()">New Tab</button> <br>
-<button ng-click="clearTab()">Clear</button> <br>
+
+<input ng-model="storyData.body.title" placeholder="Please Enter a Name" ng-show="toggleTab"></input>
+<textarea ng-model="storyData.body.text" class="info-box" cols=20 rows=20  ng-show="toggleTab"></textarea>
+<button ng-click="addStory()">Save</button>
+
+<!-- <button ng-click="addTab()">New Tab</button> <br>
+<button ng-click="clearTab()">Clear</button> <br> -->
 
 </div>
 <user-list></user-list>

@@ -1,10 +1,10 @@
 angular.module("wattReads").service("storyService", function($http){
 
-  this.addStory = function(storyData){
+  this.addStory = function(storyName){
     return $http({
       method:'POST',
       url: "/newStory",
-      data: storyData
+      data: storyName
     }).then(function(response){
       console.log(response.data);
       return response.data
@@ -20,39 +20,29 @@ angular.module("wattReads").service("storyService", function($http){
       })
   }
 
-  this.saveSections = function(story){
+  this.saveSections = function(){
     return $http({
       method: "PUT",
       url: "/updateStory/" + story._id,
       data: storyData,
       body:{
-        title: story.title,
-        text: story.text
+        title: storyData.body.title,
+        text: storyData.body.text
       }
     }).then (function(response){
       return response.data
     })
   };
 
-  this.readStory = function(){
+  this.readStory = function(storyID){
+    console.log("And this far");
     return $http({
       method:'GET',
-      URL: "/readStory"
+      url: "/readSelStory/" + storyID
     }).then(function(response){
+      console.log("Does it get this far?");
       return response.data
     })
   }
-
-  // this.setChoice = function(){
-  //   console.log("hit from storyService setName/(chooseArr)");
-  //   return $http({
-  //     method: "PUT",
-  //     URL: "/setChoice" + user._id,
-  //     data: $scope.choice
-  //   }).then(function(response){
-  //     return response.data
-  //   })
-  // }
-
 
 });

@@ -46,13 +46,13 @@ app.get('/logout', function(req, res, next){
 
 //story information on userCtrl
 app.get('/readStory/:id', userCtrl.Read);
-// app.put('/setChoice/:id', storyCtrl.SetChoice);
 
 
 //story information
 app.post('/newStory', storyCtrl.Create); //CONNECTED
 app.get('/checkStory', storyCtrl.CheckStory);
 app.put('/updateStory/:id', storyCtrl.SaveSections);
+app.get('/readSelStory/:id', storyCtrl.readSelStory);
 
 var mongoURI = config.MONGO_URI;
 var port = config.PORT;
