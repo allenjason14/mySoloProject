@@ -11,19 +11,19 @@ angular.module("wattReads").service("storyService", function($http){
     })
   }
 
-  this.readStory = function(){
+  this.readUserStory = function(user){
       return $http({
-        method:"PUT",
-        url: "/readStory" + story._id,
+        method:"GET",
+        url: "/readStory/" + user._id,
       }).then(function(response){
         return response.data
       })
   }
 
-  this.saveSections = function(){
+  this.saveSections = function(story){
     return $http({
       method: "PUT",
-      url: "/updateStory" + story._id,
+      url: "/updateStory/" + story._id,
       data: storyData,
       body:{
         title: story.title,
@@ -34,19 +34,6 @@ angular.module("wattReads").service("storyService", function($http){
     })
   };
 
-  // this.updateProduct = function(product){
-  //         return $http({
-  //             method: "PUT",
-  //             url: "/api/products/" + product._id,
-  //             data: {
-  //                 name: product.name,
-  //                 price: product.price
-  //             }
-  //         }).then(function(response){
-  //             return response.data
-  //         })
-  //     };
-
   this.readStory = function(){
     return $http({
       method:'GET',
@@ -56,5 +43,15 @@ angular.module("wattReads").service("storyService", function($http){
     })
   }
 
+// this.setChoice = function(){
+//   console.log("hit from storyService setName/(chooseArr)"
+//   return $http({
+//     method: "PUT",
+//     URL: "/setChoice",
+//     data: chooseArr;
+//   }).then(function(response){
+//     return response.data
+//   })
+// }
 
 });

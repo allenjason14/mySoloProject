@@ -2,24 +2,12 @@
 
   $scope.chooseArr = [];
   $scope.saveArr = [];
-  $scope.tabs = [];
-
-  $scope.addTab = function(){
-    $scope.tabs.push({
-      title:"",
-      body:""
-    });
-  };
-
-  $scope.clearTab = function(){
-    $scope.tabs = [];
-    };
 
   $scope.selectName = function(num) {
     $scope.chooseArr = [];
     $state.go('wikipage');
-    $scope.chooseArr.push($scope.saveArr[num]);
-    console.log($scope.saveArr[num]);
+    $scope.chooseArr.push($scope.story[num]);
+    console.log($scope.story[num]);
     console.log($scope.chooseArr[0].body);
   }
 

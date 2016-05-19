@@ -31,25 +31,25 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 //user information
-app.post('/users', userCtrl.register);
-app.get('/users', userCtrl.getUsers)
-app.get('/me', isAuthed, userCtrl.me);
+app.post('/users', userCtrl.register); //CONNECTED
+app.get('/users', userCtrl.getUsers); //CONNECTED
+app.get('/me', isAuthed, userCtrl.me); //CONNECTED
 app.delete('/user/:id', isAuthed, userCtrl.update);
 app.get('/readStory/:id', userCtrl.Read);
 
 app.post('/login', passport.authenticate('local', {
   successRedirect: '/me'
-}));
+})); //CONNECTED
 app.get('/logout', function(req, res, next){
   req.logout();
   return res.status(200).send('Logged out');
-});
+}); //CONNECTED
 
 //story information
-app.post('/newStory', storyCtrl.Create);
+app.post('/newStory', storyCtrl.Create); //CONNECTED
 app.get('/checkStory', storyCtrl.CheckStory);
 app.put('/updateStory/:id', storyCtrl.SaveSections);
-
+// app.put('/setName', storyCtrl.setName);
 
 var mongoURI = config.MONGO_URI;
 var port = config.PORT;

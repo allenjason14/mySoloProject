@@ -1,11 +1,11 @@
 <span class="menu-wrapper">
   <h2>{{user.data.name}}'s Pages</h2>
-  {{user.data.story}}
-
-  <!-- {{story.name}} -->
-    <div class="side-bar" ng-repeat="saved in saveArr track by $index">
+  {{user.data.choice}} -- users choice
+      <div class="side-bar" ng-repeat="prop in story.story track by $index">
       <hr>
-      <button class="view-change" ng-click="selectName($index)">{{saved.name}}</button>
+      <button class="view-change" ng-click="selectName($index)">{{prop.name}}</button>
     </div>
-    <!-- <div class="blank-box"></div> -->
-</span>
+    <button ng-click="hello()">Hello</button>
+    <button ng-click="goodbye()">Goodbye</button>
+
+  </span>

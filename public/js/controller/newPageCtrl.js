@@ -1,4 +1,4 @@
-angular.module("wattReads").controller("newPageCtrl", function($scope, storyService, user, $state){
+angular.module("wattReads").controller("newPageCtrl", function($scope, storyService, mainService, user, $state){
 
   $scope.user = user.data;
 
@@ -51,5 +51,4 @@ $scope.readStory = function(){
       console.log(response + " from saveSections function");
     })
   }
-
 });
