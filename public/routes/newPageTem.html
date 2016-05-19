@@ -8,11 +8,14 @@ Hello, {{user.data.name}} <br><br><br>
 
 {{storyData}}<br><br><br> -->
 
-This is my response {{storyId}}
+storyId_id {{storyId._id}}<br><br><br>
+storyId This is my response {{storyId}} <br><br><br>
+updatedStory {{updatedStory}} <br><br><br>
+storyName {{storyName}}  <br><br><br>
 
-<button ng-click="addStory(storyData)">Save</button>
+<button ng-click="addStory(storyName)">Create Page</button>
 
-<input ng-model="storyData.name"></input>
+<input ng-model="storyName.name"></input>
 
 <div ng-repeat="tab in tabs track by $index" ng-show="toggleTab">
   <!-- <button ng-click="addStory()">Save</button> -->
@@ -20,7 +23,7 @@ This is my response {{storyId}}
 
 <input ng-model="storyData.body.title" placeholder="Please Enter a Name" ng-show="toggleTab"></input>
 <textarea ng-model="storyData.body.text" class="info-box" cols=20 rows=20  ng-show="toggleTab"></textarea>
-<button ng-click="addStory()">Save</button>
+<button ng-click="saveSections(storyData)">Add Section</button>
 
 <!-- <button ng-click="addTab()">New Tab</button> <br>
 <button ng-click="clearTab()">Clear</button> <br> -->

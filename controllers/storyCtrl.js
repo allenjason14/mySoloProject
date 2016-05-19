@@ -13,7 +13,8 @@ module.exports = {
   					$push: {
   						'story': response
   					}
-  				}, function (err, user) {
+  				},
+           function (err, user) {
   					console.log(user);
   					if (err) {
   						res.status(500).send(err)
@@ -55,6 +56,7 @@ module.exports = {
           'body': req.body
         }
       },
+      {new: true},
        function(err, response){
             if(err){
                 res.status(500).json(err);
@@ -65,7 +67,7 @@ module.exports = {
     },
 
   readSelStory: function(req, res, next) {
-    Story.findById(req.params.id).exec(function(err, response) {
+    Story.findById(req.params.id).populate("body").exec(function(err, response) {
       if(err){
         res.status(500).json(err);
       }

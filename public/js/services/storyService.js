@@ -20,15 +20,12 @@ angular.module("wattReads").service("storyService", function($http){
       })
   }
 
-  this.saveSections = function(){
+  this.saveSections = function(storyData, storyId){
     return $http({
       method: "PUT",
-      url: "/updateStory/" + story._id,
-      data: storyData,
-      body:{
-        title: storyData.body.title,
-        text: storyData.body.text
-      }
+      url: "/updateStory/" + storyId,
+      // data: storyData,
+      data: storyData.body
     }).then (function(response){
       return response.data
     })

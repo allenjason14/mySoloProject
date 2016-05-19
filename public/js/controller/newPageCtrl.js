@@ -12,7 +12,6 @@ angular.module("wattReads").controller("newPageCtrl", function($scope, storyServ
   $scope.toggleTab = false;
 
   $scope.storyData = {
-    user: $scope.user._id,
     body:{}
   }
 
@@ -35,11 +34,11 @@ angular.module("wattReads").controller("newPageCtrl", function($scope, storyServ
 
 
   $scope.addStory = function(){
-    console.log("this is what I'm sending from addStory " + $scope.storyData);
-    storyService.addStory($scope.storyData).then(function(response){
+    console.log("this is what I'm sending from addStory " + $scope.storyName);
+    storyService.addStory($scope.storyName).then(function(response){
       $scope.saveArr.push(response);
       console.log("this is the response I'm getting: " + response);
-      $scope.storyId = response;
+      $scope.storyId = response._id;
     })
     $scope.toggleTab = true;
     console.log($scope.toggleTab);
@@ -47,10 +46,11 @@ angular.module("wattReads").controller("newPageCtrl", function($scope, storyServ
   }
 
   $scope.saveSections = function(){
-    console.log("This is my attempt to update " + storyData);
-    storyService.saveSections(storyData).then(function(response){
-      $scope.saveArr.push(response);
-      console.log(response + " from saveSections function");
+    console.log("This is my attempt to update " + $scope.storyData);
+    storyService.saveSections($scope.storyData, $scope.storyId).then(function(response){
+      // $scope.saveArr.push(response);
+      console.log(response , " from saveSections function");
+      $scope.updatedStory = response;
     })
   }
 });
