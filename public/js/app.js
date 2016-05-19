@@ -26,7 +26,7 @@ angular.module('wattReads', ['ui.router'])
           })
 
           .state("wikipage", {
-            url: "/wikipage",
+            url: "/wikipage/:id",
             templateUrl: "routes/wikiPageTem.html",
             resolve: {
               user: function(mainService) {

@@ -43,15 +43,16 @@ angular.module("wattReads").service("storyService", function($http){
     })
   }
 
-// this.setChoice = function(){
-//   console.log("hit from storyService setName/(chooseArr)"
-//   return $http({
-//     method: "PUT",
-//     URL: "/setChoice",
-//     data: chooseArr;
-//   }).then(function(response){
-//     return response.data
-//   })
-// }
+  // this.setChoice = function(){
+  //   console.log("hit from storyService setName/(chooseArr)");
+  //   return $http({
+  //     method: "PUT",
+  //     URL: "/setChoice" + user._id,
+  //     data: $scope.choice
+  //   }).then(function(response){
+  //     return response.data
+  //   })
+  // }
+
 
 });

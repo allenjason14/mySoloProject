@@ -35,7 +35,6 @@ app.post('/users', userCtrl.register); //CONNECTED
 app.get('/users', userCtrl.getUsers); //CONNECTED
 app.get('/me', isAuthed, userCtrl.me); //CONNECTED
 app.delete('/user/:id', isAuthed, userCtrl.update);
-app.get('/readStory/:id', userCtrl.Read);
 
 app.post('/login', passport.authenticate('local', {
   successRedirect: '/me'
@@ -45,11 +44,15 @@ app.get('/logout', function(req, res, next){
   return res.status(200).send('Logged out');
 }); //CONNECTED
 
+//story information on userCtrl
+app.get('/readStory/:id', userCtrl.Read);
+// app.put('/setChoice/:id', storyCtrl.SetChoice);
+
+
 //story information
 app.post('/newStory', storyCtrl.Create); //CONNECTED
 app.get('/checkStory', storyCtrl.CheckStory);
 app.put('/updateStory/:id', storyCtrl.SaveSections);
-// app.put('/setName', storyCtrl.setName);
 
 var mongoURI = config.MONGO_URI;
 var port = config.PORT;

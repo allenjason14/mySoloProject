@@ -47,26 +47,6 @@ module.exports = {
     })
   },
 
-  // Create: function (req, res, next) {
-  // 		Story.create(req.body, function (err, response) {
-  // 			if (err) {
-  // 				res.status(500).send(err)
-  // 			} else {
-  // 				User.findByIdAndUpdate(req.body.user, {
-  // 					$push: {
-  // 						'story': response
-  // 					}
-  // 				}, function (err, user) {
-  // 					console.log(user);
-  // 					if (err) {
-  // 						res.status(500).send(err)
-  // 					} else {
-  // 						res.status(200).send(user)
-  // 					}
-  // 				})
-  // 			}
-  // 		})
-  // 	},
 
   SaveSections: function(req, res, next) {
       Story.findByIdAndUpdate(req.params.id,
@@ -83,4 +63,5 @@ module.exports = {
             }
         })
     }
+
 }
