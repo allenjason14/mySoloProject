@@ -65,4 +65,12 @@ angular.module("wattReads").service("storyService", function($http){
     })
   }
 
+  this.removePage = function(storyId){
+    return $http({
+      method: "DELETE",
+      url: "/deleteStory/" + storyId
+    }).then(function(response){
+      console.log("The page is deleted");
+    })
+  }
 });

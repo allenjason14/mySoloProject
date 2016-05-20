@@ -75,5 +75,15 @@ module.exports = {
         res.status(200).json(response);
       }
       })
-    }
+    },
+
+    Delete: function(req, res, next){
+        Story.findByIdAndRemove(req.params.id, function(err, response){
+          if(err){
+            res.status(500).json(err);
+          }else{
+            res.status(200).json(response);
+          }
+        })
+      }
   }

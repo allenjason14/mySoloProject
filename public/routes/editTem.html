@@ -2,19 +2,23 @@
   <h1>Hey, why don't you edit your pages? That should be super fun, right?</h1>
   hello, {{user.name}} <br><br><br>
 
-  {{selStory}}
+  <!-- {{selStory}} -->
 
   <h1>{{selStory.name}}</h1>
-
+  {{selStoryLength}}
   <div ng-repeat="story in selStory.body track by $index">
     <br>
     <input placeholder="{{story.title}}" ng-model="story.title"></input>
     <br>
     <textarea cols=20 rows=20 class="info-box" ng-model="story.text">{{story.text}}</textarea>
-    <button ng-click="addTab($index)">Add Tab</button>
-    <button ng-click="removeTab($index)">Remove Tab</button>
+    <button ng-click="addTab($index)">Add Tab{{$index}}</button>
+    <button ng-click="removeTab($index)">Remove Tab{{$index}}</button>
+    <button ng-click="addAbove()">Add Above</button>
+    <button ng-click="shiftUp($index)">Shift Up</button>
+    <button ng-click="shiftDown($index)">Shift Down</button>
   </div>
   <button ng-click="updateTab()">Update</button>
+  <button ng-click="removePage()">Delete Page</button>
 </div>
 <user-list></user-list>
 

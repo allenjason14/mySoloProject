@@ -40,4 +40,16 @@ angular.module('wattReads').service("mainService", function($http) {
       return response;
     });
   };
+
+  this.removeFromStoryArray = function(storyId, userId){
+        return $http({
+            method: "PUT",
+            url: "/removeStory/" + userId,
+            data: {
+                story: storyId
+            }
+        }).then(function(response){
+            return response.data
+        })
+    }
 });

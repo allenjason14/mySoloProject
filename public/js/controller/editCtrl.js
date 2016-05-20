@@ -32,4 +32,41 @@ angular.module("wattReads").controller("editCtrl", function($scope, storyService
     $scope.selStory.body.splice(num, 1);
     console.log("splice is done");
   }
+
+  $scope.addAbove = function(){
+    $scope.selStory.body.unshift({title: "New Tab", text: "new Body"})
+  }
+
+$scope.shiftUp = function(num){
+  if (num > 0) {
+    var temp = $scope.selStory.body[num];
+    $scope.selStory.body[num] = $scope.selStory.body[num - 1];
+    $scope.selStory.body[num - 1] = temp;
+    console.log("shifted up");
+  }
+  else {
+    console.log("cannot shift up");
+  }
+}
+
+$scope.shiftDown = function(num){
+  if (num < $scope.selStory.body.length - 1) {
+    var temp = $scope.selStory.body[num];
+    $scope.selStory.body[num] = $scope.selStory.body[num + 1];
+    $scope.selStory.body[num + 1] = temp;
+    console.log( "shifted down");
+  }
+  else {
+    console.log("cannot shift down");
+  }
+}
+
+  $scope.removePage = function(){
+    storyService.removePage($scope.id).then(function(response){
+        console.log($scope.user);
+        mainService.removeFromStoryArray($scope.id, $scope.user.data._id).then(function(response){
+          $state.go("home")
+      });
+    });
+  }
 });
