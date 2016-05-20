@@ -53,6 +53,7 @@ app.post('/newStory', storyCtrl.Create); //CONNECTED
 app.get('/checkStory', storyCtrl.CheckStory);
 app.put('/updateStory/:id', storyCtrl.SaveSections);
 app.get('/readSelStory/:id', storyCtrl.readSelStory);
+app.put('/updateTab/:id', storyCtrl.updateTab);
 
 var mongoURI = config.MONGO_URI;
 var port = config.PORT;

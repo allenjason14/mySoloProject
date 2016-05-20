@@ -1,6 +1,21 @@
-<h1>Hey, why don't you edit your pages? That should be super fun, right?</h1>
-{{user}} <br><br><br>
+<div class="right-column-wrapper">
+  <h1>Hey, why don't you edit your pages? That should be super fun, right?</h1>
+  hello, {{user.name}} <br><br><br>
 
-SekSt{{selStory}} <br><br><br>
+  {{selStory}}
 
-select story = {{selStory._id}}
+  <h1>{{selStory.name}}</h1>
+
+  <div ng-repeat="story in selStory.body track by $index">
+    <br>
+    <input placeholder="{{story.title}}" ng-model="story.title"></input>
+    <br>
+    <textarea cols=20 rows=20 class="info-box" ng-model="story.text">{{story.text}}</textarea>
+    <button ng-click="addTab($index)">Add Tab</button>
+    <button ng-click="removeTab($index)">Remove Tab</button>
+  </div>
+  <button ng-click="updateTab()">Update</button>
+</div>
+<user-list></user-list>
+
+<!-- scope.body[$index] -->

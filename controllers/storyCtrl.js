@@ -55,6 +55,17 @@ module.exports = {
         })
     },
 
+  updateTab: function(req, res, next){
+    Story.findByIdAndUpdate(req.params.id, req.body, {new: true}, function(err, response) {
+      if(err){
+        res.status(500).json(err);
+      }
+      else{
+        res.status(200).json(response);
+      }
+      })
+  },
+
   readSelStory: function(req, res, next) {
     Story.findById(req.params.id).populate("body").exec(function(err, response) {
       if(err){

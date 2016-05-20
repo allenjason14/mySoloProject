@@ -8,18 +8,26 @@ Hello, {{user.data.name}} <br><br><br>
 
 {{storyData}}<br><br><br> -->
 
+<!-- story {{storyRes}}<br><br><br>
 storyId_id {{storyId._id}}<br><br><br>
 storyId This is my response {{storyId}} <br><br><br>
 updatedStory {{updatedStory}} <br><br><br>
 storyName {{storyName}}  <br><br><br>
 
-<button ng-click="addStory(storyName)">Create Page</button>
+Actual Formatting Effort Below <br><br><br> -->
 
-<input ng-model="storyName.name"></input>
+<button ng-click="addStory(storyName)" ng-hide="toggleTab">Create Page</button>
 
-<div ng-repeat="tab in tabs track by $index" ng-show="toggleTab">
-  <!-- <button ng-click="addStory()">Save</button> -->
-</div> <br>
+<input ng-model="storyName.name" ng-hide="toggleTab"></input>
+
+<h1>{{storyRes.name}}<h1>
+
+<div ng-repeat="update in updatedStory.body track by $index">
+  <br>
+  <h2>{{update.title}}<h2>
+  <hr>
+  <p>{{update.text}}<p>
+  </div> <br>
 
 <input ng-model="storyData.body.title" placeholder="Please Enter a Name" ng-show="toggleTab"></input>
 <textarea ng-model="storyData.body.text" class="info-box" cols=20 rows=20  ng-show="toggleTab"></textarea>
