@@ -16,7 +16,7 @@ angular.module('wattReads', ['ui.router'])
         })
 
           .state("edit", {
-            url: '/edit',
+            url: '/edit/:id',
             templateUrl: "routes/editTem.html",
             controller: "editCtrl",
             resolve: {

@@ -26,17 +26,6 @@ module.exports = {
   		})
   	},
 
-  // Read: function(req, res, next) {
-  //   Story.findOne({_id: req.params.id}).populate("user").exec(function(err, response) {
-  //     if(err){
-  //       res.status(500).json(err);
-  //     }
-  //     else{
-  //       res.status(200).json(response);
-  //     }
-  //   })
-  // },
-
   CheckStory: function(req, res, next) {
     Story.find({}).exec(function(err, response) {
       if(err){

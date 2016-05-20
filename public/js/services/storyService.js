@@ -1,5 +1,6 @@
 angular.module("wattReads").service("storyService", function($http){
 
+//creates a new page
   this.addStory = function(storyName){
     return $http({
       method:'POST',
@@ -11,6 +12,7 @@ angular.module("wattReads").service("storyService", function($http){
     })
   }
 
+//gets all pages made by the user.
   this.readUserStory = function(user){
       return $http({
         method:"GET",
@@ -20,22 +22,23 @@ angular.module("wattReads").service("storyService", function($http){
       })
   }
 
+//saves new sections of a page
   this.saveSections = function(storyData, storyId){
     return $http({
       method: "PUT",
       url: "/updateStory/" + storyId,
-      // data: storyData,
       data: storyData.body
     }).then (function(response){
       return response.data
     })
   };
 
-  this.readStory = function(storyID){
+//gets a selected page
+  this.readStory = function(storyId){
     console.log("And this far");
     return $http({
       method:'GET',
-      url: "/readSelStory/" + storyID
+      url: "/readSelStory/" + storyId
     }).then(function(response){
       console.log("Does it get this far?");
       return response.data
