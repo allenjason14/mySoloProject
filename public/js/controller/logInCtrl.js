@@ -3,7 +3,7 @@ angular.module('wattReads').controller('loginCtrl', function($scope, mainService
     console.log("working");
     mainService.login($scope.credentials).then(function(response) {
       console.log(response.data);
-      $state.go('wikipage');
+      $state.go('home');
     });
   };
   $scope.register = function(){

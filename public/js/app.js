@@ -1,14 +1,31 @@
 angular.module('wattReads', ['ui.router'])
   .config(function($urlRouterProvider, $stateProvider){
 
-      $urlRouterProvider.otherwise('/login');
+      $urlRouterProvider.otherwise('/home');
 
       $stateProvider
-      //   .state("home", {
-      //     url: '/',
-      //     templateUrl: "routes/homeTem.html",
-      //     controller: "homeCtrl"
-      //   })
+        .state("home", {
+          url: '/',
+          templateUrl: "routes/homeTem.html",
+          controller: "homeCtrl",
+          resolve: {
+            user: function(mainService) {
+              return mainService.getUser();
+            }
+          }
+        })
+
+          .state("edit", {
+            url: '/edit',
+            templateUrl: "routes/editTem.html",
+            controller: "editCtrl",
+            resolve: {
+              user: function(mainService) {
+                return mainService.getUser();
+              }
+            }
+          })
+
         .state("newpage", {
           url: "/new",
           templateUrl: "routes/newPageTem.html",
