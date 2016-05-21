@@ -1,8 +1,22 @@
-<div class="right-column-wrapper">
 
-<br>
-<h1>Home Page</h1>
-This is my home page. Now there's text on it. Hooray for text!
-{{user}}
+  <div class="sub-header-main-display">
+    <div>
+      <button class="home-create-link">Create New Post</button>
+    </div>
+    <div class>
+      <input class="search-bar-home"></input>
+    </div>
+
 </div>
-<user-list></user-list>
+
+<section>
+
+  <div class="home-page-main-display" ng-repeat="prop in story.story track by $index">
+    <div>
+      <span class="name-display-home">{{prop.name}}</span>
+    </div>
+    <div>
+      <button class="home-view-change" ui-sref="wikipage({id: prop._id})">View Page</button>
+  </div>
+</div>
+</section>

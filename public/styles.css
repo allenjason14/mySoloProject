@@ -23,6 +23,7 @@ body {
   border-top: .2em solid black;
   border-left: .2em solid black;
   border-right: .2em solid black;
+  margin-bottom: 40px;
 }
 
 .logo {
@@ -100,6 +101,31 @@ body {
   min-height: 5px;
   margin:1em auto;
   display:block;
+}
+
+
+/*home page formatting*/
+
+.sub-header-main-display {
+  width:85%;
+  margin-bottom: 20px;
+  margin-right:auto;
+  margin-left:auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.home-page-main-display {
+  height:200px;
+  width: 85%;
+  margin-right:auto;
+  margin-left:auto;
+  border: 2px solid black;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*.side-bar,
