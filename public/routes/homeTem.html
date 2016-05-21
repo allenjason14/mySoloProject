@@ -4,19 +4,20 @@
       <button class="home-create-link">Create New Post</button>
     </div>
     <div class>
-      <input class="search-bar-home"></input>
+      <input class="search-bar-home" ng-model="search.name"></input>
     </div>
 
 </div>
 
-<section>
-
-  <div class="home-page-main-display" ng-repeat="prop in story.story track by $index">
-    <div>
-      <span class="name-display-home">{{prop.name}}</span>
+<section class="home-repeat-container">
+  <div class="repeat-wrapper-home">
+    <div class="home-page-main-display" ng-repeat="prop in story.story track by $index">
+      <div>
+        <span class="name-display-home">{{prop.name}}</span>
+      </div>
+      <div>
+        <button class="home-view-change" ui-sref="wikipage({id: prop._id})">View Page</button>
+      </div>
     </div>
-    <div>
-      <button class="home-view-change" ui-sref="wikipage({id: prop._id})">View Page</button>
   </div>
-</div>
 </section>

@@ -1,17 +1,19 @@
+<user-list></user-list>
+
 <div class="right-column-wrapper">
 
-<h1>{{selStory.name}}</h1>
+<h1 class="page-mainname">{{selStory.name}}</h1>
 
-<div ng-repeat="story in selStory.body track by $index">
+<div class="repeat-wrapper-pages">
+  <div ng-repeat="story in selStory.body track by $index">
     <br>
-    <h2>{{story.title}}</h2>
+      <h2 class="page-subname">{{story.title}}</h2>
     <hr>
-    <p>{{story.text}}</p>
+    <p class="page-textdisplay">{{story.text}}</p>
+  </div>
 </div>
-
 <br>
 
 <button class="view-change" ui-sref="edit({id: selStory._id})">Edit This Page</button>
 
 </div>
-<user-list></user-list>
