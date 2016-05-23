@@ -1,9 +1,31 @@
-<input type="text" ng-model="credentials.email" placeholder="email">
-<input type="password" ng-model="credentials.password" placeholder="password">
-<button type="button" ng-click="login()">Login</button>
-<br><br><br>
-<input type="text" ng-model="newUser.name" placeholder="name">
-<input type="text" ng-model="newUser.email" placeholder="email">
-<input type="password" ng-model="newUser.password" placeholder="password">
-<button type="button" ng-click="register()">register</button> <br><br>
-<button type="button" ng-click="logout()">Logout</button>
+<div class="log-in-wrapper">
+  <h1 class="log-in-welcome">Welcome to Idetik!</h1>
+  <hr>
+  <!-- <h1 class="log-in-text">Log In</h1> -->
+  <div class="log-in-wrap">
+    <div class="wrapping-login">
+    <input class="user-input" ng-model="credentials.email" placeholder="email">
+    <input class="user-input" ng-model="credentials.password" placeholder="password">
+  <div class="button-cont">
+    <button class="log-in-button" ng-click="login()">Login</button>
+  </div>
+</div>
+
+  <br><br>
+  <h2 class="or-divider">- OR -</h2>
+  <br><br>
+  <!-- <h1 class="register-text">Register</h1> -->
+  <div class="register-wrap">
+    <div class="wrapping-register">
+      <input class="user-input" ng-model="newUser.name" placeholder="name">
+      <input class="user-input" ng-model="newUser.email" placeholder="email">
+      <input class="user-input" ng-model="newUser.password" placeholder="password">
+      <div class="button-cont">
+        <button class="log-in-button" ng-click="register()">register</button> <br><br>
+      </div>
+    </div>
+    <!-- <button type="button" ng-click="logout()">Logout</button> -->
+  </div>
+</div>
+<div class="log-in-bottom-text">Let Your Words Flow Free</div>
+</div>
