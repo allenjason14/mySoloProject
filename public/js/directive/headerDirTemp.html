@@ -1,5 +1,10 @@
   <div class="header">
-    <p class ="logo">IDETIK </p>
+    <div class="flex-container">
+     <img class="flex-image" src="image/bluelogo.jpg" alt="" />
+     <div class="border-right"></div>
+     <span class="image-spacer"></span>
+   </div>
+    <!-- <p class ="logo">IDETIK </p> -->
     <span class="span-wrapper">
       <span><a ui-sref='home'>Home</a></span>
       <span><a ui-sref='newpage'>New Page</a></span>
@@ -7,5 +12,22 @@
       <span><a ui-sref='wikipage'>Your Pages</a></span>
       <span><a ui-sref='edit'>Edit</a></span>
     </span>
+    <button class="logo" ng-click="">IDETIK</button>
+
+    {{toggleVisible}}
+    <!-- <nav class="drop-down-placer">
+      <div class="drop-down-starter">
+        <div class="drop-down-keeper">
+          <ul class="drop-down-menu">
+            <li><a class="drop-down-link" ui-sref='home'>Home</a></li>
+            <li><a class="drop-down-link" ui-sref='newpage'>New Page</a></li>
+            <li><a class="drop-down-link" ui-sref='login'>Log In</a></li>
+            <li><a ui-sref='wikipage'>Your Pages</a></li>
+            <a ui-sref='edit'>Edit</a>
+          </ul>
+        </div>
+      </div> -->
+    </nav>
+
   </div>
   <div class="header-cont"></div>
