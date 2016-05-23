@@ -5,7 +5,7 @@
   <div class="log-in-wrap">
     <div class="wrapping-login">
     <input class="user-input" ng-model="credentials.email" placeholder="email">
-    <input class="user-input" ng-model="credentials.password" placeholder="password">
+    <input type="password" class="user-input" ng-model="credentials.password" placeholder="password">
   <div class="button-cont">
     <button class="log-in-button" ng-click="login()">Login</button>
   </div>
@@ -19,7 +19,7 @@
     <div class="wrapping-register">
       <input class="user-input" ng-model="newUser.name" placeholder="name">
       <input class="user-input" ng-model="newUser.email" placeholder="email">
-      <input class="user-input" ng-model="newUser.password" placeholder="password">
+      <input type="password" class="user-input" ng-model="newUser.password" placeholder="password">
       <div class="button-cont">
         <button class="log-in-button" ng-click="register()">register</button> <br><br>
       </div>

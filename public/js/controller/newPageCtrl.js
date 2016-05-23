@@ -9,6 +9,7 @@ angular.module("wattReads").controller("newPageCtrl", function($scope, storyServ
   $scope.chooseArr = [];
   $scope.saveArr = [];
   $scope.toggleTab = false;
+  $scope.toggleDisplay = false;
 
   $scope.storyData = {
     body:{}
@@ -16,8 +17,10 @@ angular.module("wattReads").controller("newPageCtrl", function($scope, storyServ
 
 
   $scope.addStory = function(){
-    console.log("this is what I'm sending from addStory " + $scope.storyName);
-    storyService.addStory($scope.storyName).then(function(response){
+    console.log($scope.storyName.name)
+    if($scope.storyName.name !== undefined){
+      console.log("this is what I'm sending from addStory " + $scope.storyName);
+      storyService.addStory($scope.storyName).then(function(response){
       $scope.saveArr.push(response);
       console.log("this is the response I'm getting: " + response);
       $scope.storyId = response._id;
@@ -25,7 +28,10 @@ angular.module("wattReads").controller("newPageCtrl", function($scope, storyServ
     })
     $scope.toggleTab = true;
     console.log($scope.toggleTab);
-
+}
+  else {
+  alert("Please Name Your Page");
+}
   }
 
   $scope.saveSections = function(){
@@ -33,6 +39,10 @@ angular.module("wattReads").controller("newPageCtrl", function($scope, storyServ
     storyService.saveSections($scope.storyData, $scope.storyId).then(function(response){
       console.log(response , " from saveSections function");
       $scope.updatedStory = response;
+      $scope.storyData.body.text = "";
+      $scope.storyData.body.title = "";
+      $scope.toggleDisplay = true;
+
     })
   }
 });

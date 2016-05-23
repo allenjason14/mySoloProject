@@ -69,4 +69,6 @@ $scope.shiftDown = function(num){
       });
     });
   }
+
+  // $('textarea').autoResize();
 });

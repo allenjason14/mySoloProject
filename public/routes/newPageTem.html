@@ -2,9 +2,6 @@
 
 <div class="right-column-wrapper">
 
-<h1>Create a Page</h1>
-Hello, {{user.data.name}} <br><br><br>
-
 <!-- {{user}}<br><br><br>
 {{saveArr}}<br><br><br>
 
@@ -22,20 +19,21 @@ Actual Formatting Effort Below <br><br><br> -->
 
 <input ng-model="storyName.name" ng-hide="toggleTab"></input>
 
-<h1>{{storyRes.name}}<h1>
+<h1 class="page-mainname">{{storyRes.name}}<h1>
 
-<div ng-repeat="update in updatedStory.body track by $index">
+<div class="repeat-wrapper-pages" ng-show="toggleDisplay">
+<div class ng-repeat="update in updatedStory.body track by $index">
   <br>
-  <h2>{{update.title}}<h2>
+  <h2 class="page-subname">{{update.title}}<h2>
   <hr>
-  <p>{{update.text}}<p>
+  <p class="page-textdisplay">{{update.text}}<p>
   </div> <br>
+</div>
 
 <input ng-model="storyData.body.title" placeholder="Please Enter a Name" ng-show="toggleTab"></input>
 <textarea ng-model="storyData.body.text" class="info-box" cols=20 rows=20  ng-show="toggleTab"></textarea>
 <button ng-click="saveSections(storyData)">Add Section</button>
-
-<!-- <button ng-click="addTab()">New Tab</button> <br>
-<button ng-click="clearTab()">Clear</button> <br> -->
+<button>Create Another Page</button>
+<button>Finish</button>
 
 </div>
