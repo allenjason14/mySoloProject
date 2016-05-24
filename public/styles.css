@@ -216,7 +216,7 @@ body {
 .menu-wrapper {
   width:14%;
   margin:0;
-  margin-top:8vh;
+  margin-top:11vh;
   padding:0;
   text-align: center;
   display:inline-block;
@@ -344,9 +344,10 @@ body {
 
 .repeat-wrapper-pages{
   background: #E6E2AF;
-  border: 1px solid #002F2F;
   margin-right:3em;
   border-radius:6px;
+  margin-top:40px;
+  border: 1px solid #002F2F;
 }
 
 .page-mainname{
@@ -527,6 +528,99 @@ body {
     -2px 2px 0 #002F2F,
     2px 2px 0 #002F2F;
 }
+
+/*new page styling*/
+.add-wrapper{
+  width:90%;
+  margin-right:auto;
+  margin-left:auto;
+  height:800px;
+  background:#EFECCA;
+  border-top:20px;
+}
+
+.add-input-box {
+  margin-top:150px;
+  width:100%;
+  background:#E6E2AF;
+  border:1px solid #002F2F;
+  font-size:24px;
+  font-weight:bolder;
+  margin-bottom:.5em;
+}
+
+.add-input-button {
+height:200px;
+  width: 100%;
+  margin-right:auto;
+  margin-left:auto;
+  border: 2px solid #002F2F;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #046380;
+  margin-top:10px;
+}
+
+.new-display-description {
+  margin-right: 1em;
+  text-align:center;
+  font-family:sans-serif;
+  font-size:50px;
+  color:#E6E2AF;
+}
+
+.new-page-mainname{
+  font-weight:bolder;
+  height:2.5em;
+  color: #002F2F;
+  font-size: 3em;
+  padding-top:1em;
+  margin-left:15px;
+  margin-top:70px;
+  font-family:sans-serif;
+}
+
+.new-button-container{
+  margin-top:20px;
+}
+
+
+/*.name-display-home {
+  margin-left: 1em;
+  color:#E6E2AF;
+  font-size:50px;
+  font-family:sans-serif;
+
+}
+
+.home-view-change {
+  margin-right: 2.7em;
+}
+
+.display-description{
+  height:8em;
+  width:30vh;
+  overflow:hidden;
+  margin-right: 2.7em;
+  font-size:16px;
+  color:#E6E2AF;
+}
+
+
+.add-input-container {
+/*   height:8em;
+  width:30vh;
+  overflow:hidden;
+  margin-right: 2.7em;
+  font-size:16px;
+  color:#E6E2AF;
+  background:green;; */
+}
+}
+
 /* .register-text {
   font-size:40px;
   color: #E6E2AF;
@@ -570,4 +664,4 @@ body {
 
 .side-bar {
   z-index: 10;
-}*/
+}*/*/

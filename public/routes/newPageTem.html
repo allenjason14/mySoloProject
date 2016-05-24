@@ -2,8 +2,8 @@
 
 <user-list></user-list>
 
-<div class="right-column-wrapper">
-
+  <div class="right-column-wrapper">
+  <div class="add-wrapper">
 <!-- {{user}}<br><br><br>
 {{saveArr}}<br><br><br>
 
@@ -17,27 +17,33 @@ storyName {{storyName}}  <br><br><br>
 
 Actual Formatting Effort Below <br><br><br> -->
 
+  <div class="add-input-container">
 
-<button ng-click="addStory(storyName)" ng-hide="toggleTab">Create Page</button>
+  <input class="add-input-box" placeholder="Please Name Your Page" ng-model="storyName.name" ng-hide="toggleTab"></input>
+  <button class="add-input-button" ng-click="addStory(storyName)" ng-hide="toggleTab">
+    <div>
+      <span class="new-display-description">Create Page</span>
+    </div>
+  </button>
 
-<input ng-model="storyName.name" ng-hide="toggleTab"></input>
+  <h1 class="new-page-mainname">{{storyRes.name}}<h1>
 
-<h1 class="page-mainname">{{storyRes.name}}<h1>
-
-<div class="repeat-wrapper-pages" ng-show="toggleDisplay">
-<div class ng-repeat="update in updatedStory.body track by $index">
-  <br>
-  <h2 class="page-subname">{{update.title}}<h2>
-  <hr>
-  <p class="page-textdisplay">{{update.text}}<p>
-  </div> <br>
-</div>
-<div class="repeat-wrapper-pages">
-  <input ng-model="storyData.body.title" class="input-model-subname" placeholder="Please Enter a Name" ng-show="toggleTab"></input>
-  <textarea ng-model="storyData.body.text" class="input-model-text" cols=20 rows=20  ng-show="toggleTab"></textarea>
-  <button ng-click="saveSections(storyData)">Add Section</button>
-</div>
-<button>New Page</button>
-<button>Finish</button>
-
+  <div class="repeat-wrapper-pages" ng-show="toggleTab">
+  <div ng-repeat="update in updatedStory.body track by $index">
+    <br>
+    <h2 class="page-subname">{{update.title}}<h2>
+    <hr>
+    <p class="page-textdisplay">{{update.text}}<p>
+    </div> <br>
+  </div>
+    <div class="repeat-wrapper-pages" ng-show="toggleTab">
+      <input ng-model="storyData.body.title" class="input-model-subname" placeholder="Please Enter a Name"></input>
+      <textarea ng-model="storyData.body.text" class="input-model-text" cols=20 rows=20  placeholder="Enter text here" ng-show="toggleTab"></textarea>
+      <button  class="edit-option-button" ng-click="saveSections(storyData)" ng-show="toggleTab">Add Section</button>
+    </div>
+    <div class="new-button-container">
+      <button class="edit-option-button" ng-show="toggleTab">New Page</button>
+      <button class="edit-option-button"  ng-show="toggleTab">Finish</button>
+    </div>
+  </div>
 </div>
