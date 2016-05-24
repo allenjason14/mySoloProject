@@ -1,19 +1,20 @@
   <div class="header">
   <div class="flex-container">
       <!-- <div class="flex-image"></div> -->
-    <img class="flex-image" src="image/logotake3.jpg" alt="" />
+    <img class="flex-image" src="image/logotake5.jpg" alt="" />
      <!-- <div class="border-right"></div> -->
-     <span class="image-spacer"></span>
    </div>
-    <p class ="logo">IDETIK </p>
+   <div class="logo-flex-container">
+     <img class="flex-image" src="image/idetiklogo.jpg" alt="" />"
+   </div>
+    <!-- <p class ="logo">IDETIK </p> -->
 
     <div class="span-wrapper">
       <a class="header-link" ui-sref ='home'>Home</a>
       <a class="header-link" ui-sref ='newpage'>New Page</a>
       <a class="header-link" ui-sref='login'>Log In</button>
-      <button class="button-header" ui-sref='login' ng-click="logout()">Log Out</button>
+      <button class="button-header" ng-click="logout()">
+        <a class="header-link" ui-sref='login'>Log Out</a>
+      </button>
     </div>
   </div>
-
-
-  <div class="header-cont"></div>
