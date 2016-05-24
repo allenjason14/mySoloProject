@@ -70,5 +70,7 @@ $scope.shiftDown = function(num){
     });
   }
 
-  // $('textarea').autoResize();
+  // $(document).ready(function(){
+  //   $('textarea').autoResize();
+  // });
 });

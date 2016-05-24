@@ -16,15 +16,14 @@ body {
 
 
 .header {
-  background-color: #046380;
+/*   background-color: #046380;
   height: 5em;
   color: #E6E2AF;
   border-bottom: 5px solid black;
   border-radius: 7px;
   border-top: 2px solid black;
-/*   border-left: 2px solid black; */
-  border-right: 3px solid black;
-  position:fixed;
+  border-right: 3px solid black; */
+/*   position:fixed; */
   width:100%;
 }
 
@@ -38,12 +37,39 @@ body {
   justify-content: center;
   height:15vh;
   width:14%;
-  border-bottom: 5px solid black;
+/*   border-bottom: 5px solid black;
   border-left: 2px solid black;
   border-right:3px solid black;
-  border-radius:7px;
+  border-radius:7px; */
+  z-index:-1;
+  position:fixed;
+}
+
+.flex-container2 {
+  display: flex;
+  justify-content: center;
+  height:15vh;
+  width:14%;
+/*   border-bottom: 5px solid black;
+  border-left: 2px solid black;
+  border-right:3px solid black;
+  border-radius:7px; */
   position:absolute;
   z-index:-1;
+}
+
+#flex-container {
+  display: flex;
+  justify-content: center;
+  height:15vh;
+  width:14%;
+  /*   border-bottom: 5px solid black;
+  border-left: 2px solid black;
+  border-right:3px solid black;
+  border-radius:7px; */
+  position:absolute;
+  z-index:-1;
+  display:fixed;
 }
 
 .flex-image {
@@ -82,6 +108,7 @@ body {
 
 .logo {
   color:#E6E2AF;
+  color:#046380;
   background:none!important;
   border:none;
   padding:0!important;
@@ -92,16 +119,17 @@ body {
   margin-right:.5em;
   font-family:'Montserrat', sans-serif;
   font-weight: bolder;
-  font-size: 3.0em;
+  font-size: 5.0em;
   display:inline-block;
   position:absolute;
   top:0;
-  right:0;
+  left:220px;
+  letter-spacing:-9px;
   text-shadow:
-    -4px -4px 0 #002F2F,
-    4px -4px 0 #002F2F,
-    -4px 4px 0 #002F2F,
-    4px 4px 0 #002F2F;
+    -2px -2px 0 #002F2F,
+    2px -2px 0 #002F2F,
+    -2px 2px 0 #002F2F,
+    2px 2px 0 #002F2F;
   }
 
  .drop-down-placer {
@@ -141,6 +169,19 @@ body {
   font-weight:bolder;
  }
 
+.header-link {
+  text-decoration:none;
+  color:#002F2F;
+
+}
+
+.button-header {
+ background:none!important;
+  border:none;
+  padding:0!important;
+  color:#002F2F;
+  cursor:pointer;
+}
 /*footer formatting & spacing*/
 
 .wrapper {
@@ -245,16 +286,18 @@ body {
 .search-bar-home {
   margin-left:68%;
   width:18em;
+  margin-bottom:40px;
 }
 
 .repeat-wrapper-home {
-  overflow: scroll;
-  overflow-x:hidden;
-  width:85%;
+/*   overflow: scroll; */
+/*   overflow-x:hidden; */
+  width:90%;
   margin-right:auto;
   margin-left:auto;
-  height:900px;
+  height:800px;
   background:#EFECCA;
+  border-top:20px;
 }
 
 .home-page-main-display {
@@ -276,12 +319,23 @@ body {
   margin-left: 1em;
   color:#E6E2AF;
   font-size:50px;
+  font-family:sans-serif;
 
 }
 
 .home-view-change {
   margin-right: 2.7em;
 }
+
+.display-description{
+  height:8em;
+  width:30vh;
+  overflow:hidden;
+  margin-right: 2.7em;
+  font-size:16px;
+  color:#E6E2AF;
+}
+
 
 .spacer {
   height:2em;
@@ -302,12 +356,14 @@ body {
   font-size: 3em;
   padding-top:1em;
   margin-left:15px;
+  font-family:sans-serif;
 }
 
 .page-subname {
   font-size:24px;
   margin-left:3%;
-  font-weight:bolder
+  font-weight:bolder;
+  font-family:sans-serif;
 }
 
 .page-textdisplay {
@@ -330,11 +386,13 @@ body {
 
 .input-model-text {
   width:90%;
-  height: 7em;
+  height:7em;
+  margin-bottom:15px;
   margin-left:5%;
   background:#E6E2AF;
   border:none;
   font-size:18px;
+  overflow-y:hidden;
 }
 
 .edit-options {
@@ -351,18 +409,20 @@ body {
    margin-right:auto;
 }
 
-.edit-container {
+/* .edit-container {
   border:10px solid white;
   width:80%;
   margin-left:auto;
   margin-right:auto;
 }
-
+ */
 .bottom-button-container {
-  border: 3px solid black;
-  width:100%;
+
+  width:80%;
   margin-top:3em;
+  margin-left:4em;
   display:flex;
+  justify-content:space-between;
 
 }
 /*log-in-wrapper*/

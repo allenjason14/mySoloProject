@@ -1,23 +1,18 @@
   <div class="header">
-    <div class="flex-container">
+  <div class="flex-container">
       <!-- <div class="flex-image"></div> -->
-     <img class="flex-image" src="image/logotake3.jpg" alt="" />
-     <div class="border-right"></div>
+    <img class="flex-image" src="image/logotake3.jpg" alt="" />
+     <!-- <div class="border-right"></div> -->
      <span class="image-spacer"></span>
    </div>
-    <!-- <p class ="logo">IDETIK </p> -->
+    <p class ="logo">IDETIK </p>
 
-    <button class="logo" ng-click="toggleMenu()">IDETIK</button>
-
-     <nav class="drop-down-placer" ng-hide="toggleVisible">
-        <hr>
-        <button class="drop-down-link" ui-sref='home' ng-click="toggleMenu()">Home</button>
-        <hr>
-        <button class="drop-down-link" ui-sref='newpage' ng-click="toggleMenu()">New Page</button>
-        <hr>
-        <button class="drop-down-link" ui-sref='login' ng-click="logout()">Log Out</button>
-        <hr>
-      </nav>
-
+    <div class="span-wrapper">
+      <a class="header-link" ui-sref ='home'>Home</a>
+      <a class="header-link" ui-sref ='newpage'>New Page</a>
+      <button class="button-header" ui-sref='login' ng-click="logout()">LogIn/Log Out</button>
+    </div>
   </div>
+
+
   <div class="header-cont"></div>

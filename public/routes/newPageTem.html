@@ -1,3 +1,5 @@
+<header-dir></header-dir>
+
 <user-list></user-list>
 
 <div class="right-column-wrapper">
@@ -15,6 +17,7 @@ storyName {{storyName}}  <br><br><br>
 
 Actual Formatting Effort Below <br><br><br> -->
 
+
 <button ng-click="addStory(storyName)" ng-hide="toggleTab">Create Page</button>
 
 <input ng-model="storyName.name" ng-hide="toggleTab"></input>
@@ -29,11 +32,12 @@ Actual Formatting Effort Below <br><br><br> -->
   <p class="page-textdisplay">{{update.text}}<p>
   </div> <br>
 </div>
-
-<input ng-model="storyData.body.title" placeholder="Please Enter a Name" ng-show="toggleTab"></input>
-<textarea ng-model="storyData.body.text" class="info-box" cols=20 rows=20  ng-show="toggleTab"></textarea>
-<button ng-click="saveSections(storyData)">Add Section</button>
-<button>Create Another Page</button>
+<div class="repeat-wrapper-pages">
+  <input ng-model="storyData.body.title" class="input-model-subname" placeholder="Please Enter a Name" ng-show="toggleTab"></input>
+  <textarea ng-model="storyData.body.text" class="input-model-text" cols=20 rows=20  ng-show="toggleTab"></textarea>
+  <button ng-click="saveSections(storyData)">Add Section</button>
+</div>
+<button>New Page</button>
 <button>Finish</button>
 
 </div>
