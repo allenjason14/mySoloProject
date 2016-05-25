@@ -4,7 +4,7 @@
 
 <div class="right-column-wrapper">
 
-<h1 class="page-mainname">{{selStory.name}}</h1>
+<h1 class="new-page-mainname">{{selStory.name}}</h1>
 
 <div class="repeat-wrapper-pages">
   <div ng-repeat="story in selStory.body track by $index">
@@ -15,8 +15,9 @@
   </div>
 </div>
 <br>
-<div class="new-button-container">
+<div class="bottom-button-container">
   <button class="edit-option-button" ui-sref="edit({id: selStory._id})">Edit Page</button>
 </div>
 
 </div>
+<div class="spacer"></div>

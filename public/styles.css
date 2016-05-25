@@ -42,7 +42,7 @@ body {
   height:15vh;
   width:12vw;
   top:0;
-  left:0;
+  left:-.6em;
 }
 
 .logo-flex-container {
@@ -108,6 +108,8 @@ body {
   font-size:1.6em;
   font-weight:bolder;
   color:#D3D8FB;
+  background:black;
+  padding:10px;
 }
 
 .menu-wrapper {
@@ -125,6 +127,7 @@ body {
 }
 
 .view-change {
+    border:.4em solid #18284A;
   background:none!important;
   border:none;
   padding:0!important;
@@ -159,6 +162,7 @@ body {
   width:18em;
   background:#3D423D;
   border:none;
+  color:#D3D8FB;
 }
 
 .repeat-wrapper-home {
@@ -199,7 +203,7 @@ body {
 /*page formatting*/
 
 .repeat-wrapper-pages{
-  margin-top:8em;
+  margin-top:.5em;
   background: #3D423D;
   margin-right:3em;
   border-radius:6px;
@@ -278,6 +282,7 @@ body {
   padding-top:1em;
   margin-left:15px;
   font-family:sans-serif;
+  margin-top:50px;
 }
 
 .page-subname {
@@ -295,6 +300,7 @@ body {
   margin-bottom:2%;
   color: #D3D8FB;
   padding:1%;
+  font-family:sans-serif;
  }
 
 .input-model-subname {
@@ -305,6 +311,7 @@ body {
   font-size:1.5em;
   margin-left:3%;
   font-weight:bolder;
+  font-family:sans-serif;
   margin-bottom:.5em;
   color: #D3D8FB;
 }
@@ -318,9 +325,11 @@ body {
   border:none;
   font-size:1em;
   color: #D3D8FB;
+  font-family:sans-serif;
 }
 
 .edit-options {
+  margin-top:10px;
  padding-left:38vw;
  display:flex;
  justify-content:flex-end;
@@ -333,8 +342,8 @@ body {
   background:#0C1829;
   color:#CFCFEB;
   font-size: 1.2em;
-   margin-left:auto;
-   margin-right:auto;
+  margin-right:5px;
+
 }
 
  .edit-container {
@@ -502,6 +511,7 @@ body {
   margin-left:31vw
 }
 
+
 .new-page-submit {
   width:6em;
   height:1.3em;
@@ -509,4 +519,8 @@ body {
   color:#CFCFEB;
   font-size: 1.2em;
    margin-left:85%;
+}
+
+.spacer {
+  height:2em;
 }
