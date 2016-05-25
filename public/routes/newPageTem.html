@@ -1,4 +1,8 @@
+<user-list></user-list>
+
   <div class="right-column-wrapper">
+
+
   <div class="add-wrapper">
 <!-- {{user}}<br><br><br>
 {{saveArr}}<br><br><br>
@@ -24,7 +28,7 @@ Actual Formatting Effort Below <br><br><br> -->
 
   <h1 class="new-page-mainname">{{storyRes.name}}<h1>
 
-  <div class="repeat-wrapper-pages" ng-show="toggleTab">
+  <div class="repeat-wrapper-pages" ng-show="toggleDisplay">
   <div ng-repeat="update in updatedStory.body track by $index">
     <br>
     <h2 class="page-subname">{{update.title}}<h2>
@@ -35,11 +39,13 @@ Actual Formatting Effort Below <br><br><br> -->
     <div class="repeat-wrapper-pages" ng-show="toggleTab">
       <input ng-model="storyData.body.title" class="input-model-subname" placeholder="Please Enter a Name"></input>
       <textarea ng-model="storyData.body.text" class="input-model-text" cols=20 rows=20  placeholder="Enter text here" ng-show="toggleTab"></textarea>
-      <button  class="edit-option-button" ng-click="saveSections(storyData)" ng-show="toggleTab">Add Section</button>
+      <button  class="new-page-submit" ng-click="saveSections(storyData)" ng-show="toggleTab">Add Section</button>
     </div>
-    <div class="new-button-container">
-      <button class="edit-option-button" ng-show="toggleTab" ui-sref="newpage">New Page</button>
-      <button class="edit-option-button"  ng-show="toggleTab" ui-sref="home">Finish</button>
-    </div>
+    <div class="bottom-button-container">
+      <!-- <div class="new-button-container"> -->
+        <button class="new-page-submit" ng-show="toggleTab" ui-sref="home">Finish</button>
+            <!-- </div> -->
   </div>
+  </div>
+</div>
 </div>
