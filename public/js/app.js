@@ -1,4 +1,4 @@
-angular.module('wattReads', ['ui.router'])
+angular.module('wattReads', ['ui.router', 'hc.marked'])
   .config(function($urlRouterProvider, $stateProvider){
 
       $urlRouterProvider.otherwise('/home');
