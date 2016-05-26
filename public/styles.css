@@ -221,7 +221,7 @@ body {
 /*log-in-wrapper*/
 
 .log-in-wrapper {
-  height:60vh;
+  height:70vh;
   width: 70vw;
   margin-right:auto;
   margin-left:auto;
@@ -400,12 +400,13 @@ body {
 }
 
 .wrapping-login {
-  margin-top:6em;
+  margin-top:3em;
   margin-right:auto;
   margin-left:auto;
   display:block;
   width:45%;
   height:45%
+
 
 }
 
@@ -425,7 +426,7 @@ body {
 }
 
 .wrapping-register{
-  margin-top: 5em;
+  margin-top: 2em;
   width:100%;
   margin-left:auto;
   margin-right:auto;

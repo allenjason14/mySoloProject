@@ -8,14 +8,4 @@ angular.module("wattReads").directive("textAreaDir", function() {
       index: '='
     }
   };
-
-}).directive("mark", function() {
-  return {
-    restrict: "E",
-    template: '<div marked="story"></div>',
-    scope: {
-      story: '='
-    }
-  };
-
 });

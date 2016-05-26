@@ -1,14 +1,22 @@
 angular.module("wattReads").controller("textAreaCtrl", function($scope) {
   console.log($scope.body);
 
-  setTimeout(function(){
-    var simplemde = new SimpleMDE({ element: document.getElementById('body_'+$scope.index)});
-    if($scope.body){
-    simplemde.value($scope.body.text);
+  if(!$scope.index){
+    $scope.index = 0;
   }
-    simplemde.codemirror.on("change", function(){
-    $scope.body.text = simplemde.value();
-    });
-  }, 500);
+
+  setTimeout(function(){
+    $scope.simplemde = new SimpleMDE({ element: document.getElementById($scope.index)});
+
+    if($scope.body){
+      $scope.simplemde.value($scope.body.text);
+  }
+
+}, 100);
+
+  $scope.save = function() {
+    $scope.body.text = $scope.simplemde.value();
+    console.log("this is from save " , $scope.body.text);
+  }
 
 });
