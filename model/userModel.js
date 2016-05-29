@@ -5,7 +5,8 @@ var User = new mongoose.Schema({
   name: {type: String},
   email: {type: String, index: true},
   password: {type: String},
-  story: [{type: mongoose.Schema.Types.ObjectId, ref: "Story"}]
+  story: [{type: mongoose.Schema.Types.ObjectId, ref: "Story"}],
+  category:[{type: mongoose.Schema.Types.ObjectId, ref: "Category"}]
 });
 
 User.pre('save', function(next) {

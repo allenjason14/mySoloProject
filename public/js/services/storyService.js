@@ -33,15 +33,15 @@ angular.module("wattReads").service("storyService", function($http){
     })
   };
 
-  this.updateTab = function(tabData, tabID){
-    return $http({
-      method: "PUT",
-      url: "/updateTab/" + tabId,
-      data: tabData.body
-    }).then (function(response){
-      return response.data
-    })
-  }
+  // this.updateTab = function(tabData, tabID){
+  //   return $http({
+  //     method: "PUT",
+  //     url: "/updateTab/" + tabId,
+  //     data: tabData.body
+  //   }).then (function(response){
+  //     return response.data
+  //   })
+  // }
 
   this.updateTab = function(tabData, tabId){
     return $http({
