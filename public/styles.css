@@ -13,7 +13,7 @@ black: 122422
 
 
 html {
-  background-color:#000000;
+  /*background-color:#000000;*/
   width: 100%;
   margin:0;
   padding:0;
@@ -524,4 +524,8 @@ body {
 
 .spacer {
   height:2em;
+}
+
+.menu-text {
+  margin-top:30vh;
 }

@@ -52,6 +52,21 @@ angular.module('wattReads', ['ui.router', 'hc.marked'])
             },
             controller: "wikiPageCtrl"
           })
+
+          .state("menu", {
+          templateUrl: "routes/menuTem.html",
+          controller: 'menuCtrl',
+          resolve: {
+            user: function(mainService, $state) {
+              return mainService.getUser().then(function(response){
+                return response.data;
+              }).catch(function(err) {
+                $state.go('login')
+              });
+            }
+          }
+        })
+
           .state("profile", {
           templateUrl: "routes/profileTem.html",
           controller: 'profileCtrl',
@@ -64,5 +79,6 @@ angular.module('wattReads', ['ui.router', 'hc.marked'])
               });
             }
           }
-        });
+        })
+
     });
