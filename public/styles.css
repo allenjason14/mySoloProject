@@ -13,7 +13,7 @@ black: 122422
 
 
 html {
-  /*background-color:#000000;*/
+  background-color:#000000;
   width: 100%;
   margin:0;
   padding:0;
@@ -221,7 +221,7 @@ body {
 /*log-in-wrapper*/
 
 .log-in-wrapper {
-  height:70vh;
+  height:60vh;
   width: 70vw;
   margin-right:auto;
   margin-left:auto;
@@ -400,13 +400,12 @@ body {
 }
 
 .wrapping-login {
-  margin-top:3em;
+  margin-top:6em;
   margin-right:auto;
   margin-left:auto;
   display:block;
   width:45%;
   height:45%
-
 
 }
 
@@ -426,7 +425,7 @@ body {
 }
 
 .wrapping-register{
-  margin-top: 2em;
+  margin-top: 5em;
   width:100%;
   margin-left:auto;
   margin-right:auto;
@@ -524,8 +523,4 @@ body {
 
 .spacer {
   height:2em;
-}
-
-.menu-text {
-  margin-top:30vh;
 }

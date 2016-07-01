@@ -5,7 +5,6 @@ var mongoose = require('mongoose');
 
 var userCtrl = require('./controllers/userCtrl.js');
 var storyCtrl = require('./controllers/storyCtrl.js');
-var categoryCtrl = require('./controllers/categoryCtrl.js');
 
 var config = require('./config');
 
@@ -52,17 +51,11 @@ app.put('/removeStory/:id', userCtrl.removeFromStoryArray)
 
 //story information
 app.post('/newStory', storyCtrl.Create); //CONNECTED
-// app.get('/checkStory', storyCtrl.CheckStory);
+app.get('/checkStory', storyCtrl.CheckStory);
 app.put('/updateStory/:id', storyCtrl.SaveSections);
 app.get('/readSelStory/:id', storyCtrl.readSelStory);
 app.put('/updateTab/:id', storyCtrl.updateTab);
 app.delete('/deleteStory/:id', storyCtrl.Delete)
-
-//category information
-app.post('/newCat', categoryCtrl.Create);
-app.put('/updateCat/:id', categoryCtrl.Update);
-app.put('/removeCat/:id', categoryCtrl.removeFromCatArray);
-
 
 var mongoURI = config.MONGO_URI;
 var port = config.PORT;
