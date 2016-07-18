@@ -259,7 +259,7 @@ body {
 }
 
 .home-button-cont {
-  width:80%;
+  width:30vw;
   margin-left: auto;
   margin-right: auto;
 }
@@ -449,10 +449,11 @@ body {
 
 .guest-button {
   height:2em;
+  width:30vw;
   background:green;
   color:#CFCFEB;
   font-size: 1.2em;
-  margin-left: 20vw;
+
 }
 
 .log-in-bottom-text {
