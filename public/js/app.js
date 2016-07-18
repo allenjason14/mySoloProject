@@ -1,7 +1,7 @@
 angular.module('wattReads', ['ui.router', 'hc.marked'])
   .config(function($urlRouterProvider, $stateProvider){
 
-      $urlRouterProvider.otherwise('/home');
+      $urlRouterProvider.otherwise('/login');
 
       $stateProvider
         .state("home", {
@@ -52,17 +52,17 @@ angular.module('wattReads', ['ui.router', 'hc.marked'])
             },
             controller: "wikiPageCtrl"
           })
-          .state("profile", {
-          templateUrl: "routes/profileTem.html",
-          controller: 'profileCtrl',
-          resolve: {
-            user: function(mainService, $state) {
-              return mainService.getUser().then(function(response){
-                return response.data;
-              }).catch(function(err) {
-                $state.go('login')
-              });
-            }
-          }
-        });
+        //   .state("profile", {
+        //   templateUrl: "routes/profileTem.html",
+        //   controller: 'profileCtrl',
+        //   resolve: {
+        //     user: function(mainService, $state) {
+        //       return mainService.getUser().then(function(response){
+        //         return response.data;
+        //       }).catch(function(err) {
+        //         $state.go('login')
+        //       });
+        //     }
+        //   }
+        // });
     });

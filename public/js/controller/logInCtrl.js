@@ -1,4 +1,10 @@
 angular.module('wattReads').controller('loginCtrl', function($scope, mainService, $state) {
+
+  $scope.guest = {
+    email: "guest@guest.com",
+    password: "guest"
+  }
+
   $scope.login = function(){
     console.log("working");
     mainService.login($scope.credentials).then(function(response) {
@@ -18,4 +24,12 @@ angular.module('wattReads').controller('loginCtrl', function($scope, mainService
       console.log(response);
     });
   };
+
+  $scope.guestLogin = function(){
+    mainService.login($scope.guest).then(function(response) {
+      console.log(response.data);
+    $state.go("home");
+  });
+};
+
 });

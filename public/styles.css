@@ -258,6 +258,11 @@ body {
     display:inline-block;
 }
 
+.home-button-cont {
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 
 .info-box {
@@ -397,6 +402,7 @@ body {
   margin-left:auto;
   display:flex;
   justify-content:space-between
+  vertical-align: middle;
 }
 
 .wrapping-login {
@@ -438,6 +444,15 @@ body {
   margin-right:auto;
   margin-left:auto;
   display:flex;
+  vertical-align: middle;
+}
+
+.guest-button {
+  height:2em;
+  background:green;
+  color:#CFCFEB;
+  font-size: 1.2em;
+  margin-left: 20vw;
 }
 
 .log-in-bottom-text {
